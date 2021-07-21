@@ -50,53 +50,56 @@ const subjectText ="Add subject";
    @override
   Widget build(BuildContext context) {
         return Scaffold(
-            body: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-              SizedBox(),
-
-AnimatedTextKit(animatedTexts: [
-          TypewriterAnimatedText(
-            "Hi! I am Jhaymes :)",
-            textStyle: TextStyle(fontSize:50,
-            color: Color(0xff918E85,),),
-            speed: Duration(milliseconds:100),
-            cursor: "...",
-            curve: Curves.linear,
-          ),
+            body: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                //SizedBox(),
+          AnimatedTextKit(animatedTexts: [
+            TypewriterAnimatedText(
+                "Hey! I am Jhaymes :)",
+                textStyle: TextStyle(fontSize:50,
+                color: Color(0xff918E85,),),
+                speed: Duration(milliseconds:100),
+                cursor: "...",
+                curve: Curves.linear,
+            ),
         ],
-        isRepeatingAnimation: true,
+        isRepeatingAnimation: false,
         pause: Duration(milliseconds:500),
         displayFullTextOnTap: true,
         repeatForever: false,
         stopPauseOnTap: false,
         ),
          Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  TextAndFunc(
-                    text: "article",
-                    function: launchblog, 
-                  ),
-                  TextAndFunc(
-                    text: "code",
-                    function: launchGitHub,
-                  ),TextAndFunc(
-                    text: "linkedIn",
-                    function: launchLinkedIn,
-                  ),TextAndFunc(
-                    text: "contact",
-                    function: _sendMail,
-                  ),
-                ],
-              ),
-              ]),
+          mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+                    TextAndFunc(
+                      text: "articles",
+                      function: launchblog, 
+                    ),
+                    TextAndFunc(
+                      text: "code",
+                      function: launchGitHub,
+                    ),TextAndFunc(
+                      text: "linkedIn",
+                      function: launchLinkedIn,
+                    ),TextAndFunc(
+                      text: "contact",
+                      function: _sendMail,
+                    ),
+                  ],
+                ),
+                ]),
+            ),
             backgroundColor: Colors.black,
             );
      }
   }
 
 
+// ignore: must_be_immutable
 class TextAndFunc extends StatelessWidget {
    TextAndFunc({this.text,this.function}) ;
   String? text;
